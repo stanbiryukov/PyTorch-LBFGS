@@ -18,7 +18,7 @@ setup(
     url = 'git@github.com:stanbiryukov/PyTorch-LBFGS.git',
     install_requires = requirements,
     package_data = {'LBFGS':['resources/*']},
-    packages = find_packages(exclude=['PyTorch-LBFGS/tests']),
+    packages = find_packages(exclude=['LBFGS/tests']),
     license = 'MIT',
     description='PyTorch-LBFGS: A PyTorch Implementation of L-BFGS',
     long_description= "PyTorch-LBFGS is a modular implementation of L-BFGS, a popular quasi-Newton method, for PyTorch that is compatible with many recent algorithmic advancements for improving and stabilizing stochastic quasi-Newton methods and addresses many of the deficiencies with the existing PyTorch L-BFGS implementation. It is designed to provide maximal flexibility to researchers and practitioners in the design and implementation of stochastic quasi-Newton methods for training neural networks.",
