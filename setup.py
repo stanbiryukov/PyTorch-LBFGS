@@ -11,7 +11,7 @@ extra_setuptools_args = dict(
 )
 
 setup(
-    name ='PyTorch-LBFGS',
+    name ='torchLBFGS',
     version = __version__,
     author ='Hao-Jun Michael Shi (Northwestern University) and Dheevatsa Mudigere (Facebook)',
     url = 'git@github.com:stanbiryukov/PyTorch-LBFGS.git',
