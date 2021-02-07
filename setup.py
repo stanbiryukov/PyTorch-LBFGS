@@ -17,7 +17,7 @@ setup(
     last_edited_by = 'Stan Biryukov'
     url = 'git@github.com:stanbiryukov/PyTorch-LBFGS.git',
     install_requires = requirements,
-    package_data = {'PyTorch-LBFGS':['resources/*']},
+    package_data = {'LBFGS':['resources/*']},
     packages = find_packages(exclude=['PyTorch-LBFGS/tests']),
     license = 'MIT',
     description='PyTorch-LBFGS: A PyTorch Implementation of L-BFGS',
