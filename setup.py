@@ -14,7 +14,6 @@ setup(
     name ='PyTorch-LBFGS',
     version = __version__,
     author ='Hao-Jun Michael Shi (Northwestern University) and Dheevatsa Mudigere (Facebook)',
-    last_edited_by = 'Stan Biryukov',
     url = 'git@github.com:stanbiryukov/PyTorch-LBFGS.git',
     install_requires = requirements,
     package_data = {'torchLBFGS':['resources/*']},
