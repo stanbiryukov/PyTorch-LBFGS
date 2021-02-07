@@ -3,7 +3,7 @@ from setuptools import setup, find_packages
 with open('requirements.txt') as f:
     requirements = f.read().splitlines()
 
-with open("PyTorch-LBFGS/version.py") as f:
+with open("LBFGS/version.py") as f:
     exec(f.read())
 
 extra_setuptools_args = dict(
