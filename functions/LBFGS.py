@@ -592,10 +592,8 @@ class LBFGS(Optimizer):
 
             # initialize values
             if interpolate:
-                if torch.cuda.is_available():
-                    F_prev = torch.tensor(np.nan, dtype=dtype).cuda()
-                else:
-                    F_prev = torch.tensor(np.nan, dtype=dtype)
+                # check type
+                F_prev = torch.tensor(np.nan, dtype=dtype)
 
             ls_step = 0
             t_prev = 0 # old steplength
@@ -795,12 +793,9 @@ class LBFGS(Optimizer):
                 F_a = F_k
                 g_a = gtd
 
-                if(torch.cuda.is_available()):
-                    F_b = torch.tensor(np.nan, dtype=dtype).cuda()
-                    g_b = torch.tensor(np.nan, dtype=dtype).cuda()
-                else:
-                    F_b = torch.tensor(np.nan, dtype=dtype)
-                    g_b = torch.tensor(np.nan, dtype=dtype)
+                # check type
+                F_b = torch.tensor(np.nan, dtype=dtype)
+                g_b = torch.tensor(np.nan, dtype=dtype)
 
             # begin print for debug mode
             if ls_debug:
@@ -860,11 +855,8 @@ class LBFGS(Optimizer):
                     # update interpolation quantities
                     if interpolate:
                         F_b = F_new
-                        if torch.cuda.is_available():
-                            g_b = torch.tensor(np.nan, dtype=dtype).cuda()
-                        else:
-                            g_b = torch.tensor(np.nan, dtype=dtype)
-
+                        # check type
+                        g_b = torch.tensor(np.nan, dtype=dtype)
                 else:
 
                     # compute gradient
@@ -1090,7 +1082,7 @@ class FullBatchLBFGS(LBFGS):
             eps = 1e-2
         else:
             eps = options['eps']
-        
+
         # gather gradient
         grad = self._gather_flat_grad()
         
@@ -1103,4 +1095,5 @@ class FullBatchLBFGS(LBFGS):
         p = self.two_loop_recursion(-grad)
 
         # take step
+        options['ls_debug'] = debug
         return self._step(p, grad, options=options)
