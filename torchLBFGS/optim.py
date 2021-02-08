@@ -706,7 +706,7 @@ class LBFGS(Optimizer):
             state['Bs'] = Bs
             state['fail'] = fail
 
-            return F_new, t, ls_step, closure_eval, desc_dir, fail
+            return F_new, t, ls_step, closure_eval, desc_dir, fail, None, None
 
         # perform weak Wolfe line search
         elif line_search == 'Wolfe':
