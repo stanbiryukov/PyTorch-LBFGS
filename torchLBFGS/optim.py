@@ -1094,5 +1094,4 @@ class FullBatchLBFGS(LBFGS):
         p = self.two_loop_recursion(-grad)
 
         # take step
-        options['ls_debug'] = debug
         return self._step(p, grad, options=options)
